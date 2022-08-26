@@ -67,3 +67,16 @@ console.log(firstSet, secondSet);
 const [i, , [j, k]] = nested;
 
 console.log(i, j, k); //destructured an "array" and an "array" inside an "array"
+
+//destructuring and giving default values//
+
+/*
+
+const [value1, value2, value3] = [3, 2];  //gives undefined for value 3 
+
+*/
+
+//However we can give default values to avoid this
+
+const [value1 = 1, value2 = 1, value3 = 1] = [3, 2];
+console.log(value1, value2, value3);
