@@ -22,6 +22,10 @@ const restaurant = {
     );
   },
 
+  orderPasta: function (ing1, ing2, ing3) {
+    console.log(`Here is your delicious pasta with ${ing1}, ${ing2}, ${ing3}`);
+  },
+
   openingHours: {
     thu: {
       open: 12,
@@ -115,3 +119,41 @@ const [value1, value2, value3] = [3, 2];  //gives undefined for value 3
 const [value1 = 1, value2 = 1, value3 = 1] = [3, 2];
 console.log(value1, value2, value3);
 */
+
+/* ------------------------------------------------------- The Spread Operator ------------------------------------------------------------------ */
+
+const arr = [1, 2];
+const newArr = [...arr, 5, 6, ...arr]; //takes the regular array as individual number and adds it to the "newArr"
+console.log(newArr);
+console.log(...arr); //prints numbers and not an array
+
+const newMenu = [...restaurant.mainMenu, "chimi"];
+console.log(newMenu);
+
+//Copy array//
+
+const mainMenuCopy = [...restaurant.mainMenu];
+console.log(mainMenuCopy);
+
+//joining 2 arrays
+
+const mainMenuAndStarterMenuCopy = [
+  ...restaurant.mainMenu,
+  ...restaurant.starterMenu,
+];
+
+console.log(mainMenuAndStarterMenuCopy);
+
+//Real-World example
+/*
+const ingredients = [
+  prompt("Let's make some pasta! Ingredient 1?"),
+  prompt("Ingredient 2?"),
+  prompt("Ingredient 3?"), 
+]; 
+
+//restaurant.orderPasta(...ingredients); */
+
+//Objects
+
+const newRestaurant = { foundedIn: 1998, ...restaurant, founder: "Guiseppe" };
