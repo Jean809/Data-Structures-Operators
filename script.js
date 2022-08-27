@@ -57,12 +57,15 @@ console.log(name, openingHours, categories);
 
 //mutating variables in objects?
 
+/*
 let a = 213;
 let b = 391;
 
 const obj = { a: 24, b: 2, c: 9 };
 
 ({ a, b } = obj);
+
+*/
 
 /*
 //Simple example to make sense of Destructuring
@@ -122,6 +125,7 @@ console.log(value1, value2, value3);
 
 /* ------------------------------------------------------- The Spread Operator ------------------------------------------------------------------ */
 
+/*
 const arr = [1, 2];
 const newArr = [...arr, 5, 6, ...arr]; //takes the regular array as individual number and adds it to the "newArr"
 console.log(newArr);
@@ -144,6 +148,8 @@ const mainMenuAndStarterMenuCopy = [
 
 console.log(mainMenuAndStarterMenuCopy);
 
+*/
+
 //Real-World example
 /*
 const ingredients = [
@@ -156,4 +162,25 @@ const ingredients = [
 
 //Objects
 
-const newRestaurant = { foundedIn: 1998, ...restaurant, founder: "Guiseppe" };
+//const newRestaurant = { foundedIn: 1998, ...restaurant, founder: "Guiseppe" };//     -------- //Here we copied + added additional properties to this array
+
+// ----------------------------------------------- Rest Pattern & Parameters -------------------------------------------------------------------
+
+//SPREAD, because on right side of equal sign =
+const arr = [1, 2, ...[3, 4]];
+
+//REST, because on left side of equal sign =
+const [a, b, ...others] = [1, 2, 3, 4, 5];
+
+const [pizza, , risotto, ...otherFood] = [
+  ...restaurant.starterMenu,
+  ...restaurant.mainMenu,
+];
+
+console.log(pizza, risotto, otherFood);
+
+// Objects
+
+const { sat, ...weekDays } = restaurant.openingHours;
+
+console.log(weekDays);
