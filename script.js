@@ -16,6 +16,12 @@ const restaurant = {
     return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
   },
 
+  orderDelivery: function ({ starterIndex, mainIndex, time, address }) {
+    console.log(
+      `Your order ${this.mainMenu[mainIndex]} and ${this.starterMenu[starterIndex]} has been received! Your order will be delivered to ${address} at ${time}. Thank you!`
+    );
+  },
+
   openingHours: {
     thu: {
       open: 12,
@@ -32,6 +38,29 @@ const restaurant = {
   },
 };
 
+restaurant.orderDelivery({
+  time: "3:30pm",
+  address: "Near NY City Harbor",
+  mainIndex: 1,
+  starterIndex: 2,
+});
+
+//How to destructure an object?
+
+const { name, openingHours, categories } = restaurant;
+
+console.log(name, openingHours, categories);
+
+//mutating variables in objects?
+
+let a = 213;
+let b = 391;
+
+const obj = { a: 24, b: 2, c: 9 };
+
+({ a, b } = obj);
+
+/*
 //Simple example to make sense of Destructuring
 const arr = [2, 3, 4];
 const a = arr[0];
@@ -45,6 +74,9 @@ console.log(arr);
 //Real examples begin here
 
 //switching variables
+*/
+
+/*
 
 let [main, secondary] = restaurant.categories;
 console.log(main, secondary);
@@ -68,7 +100,9 @@ const [i, , [j, k]] = nested;
 
 console.log(i, j, k); //destructured an "array" and an "array" inside an "array"
 
-//destructuring and giving default values//
+//destructuring and giving default values// 
+
+*/
 
 /*
 
@@ -77,6 +111,7 @@ const [value1, value2, value3] = [3, 2];  //gives undefined for value 3
 */
 
 //However we can give default values to avoid this
-
+/*
 const [value1 = 1, value2 = 1, value3 = 1] = [3, 2];
 console.log(value1, value2, value3);
+*/
