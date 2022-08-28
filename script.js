@@ -171,6 +171,8 @@ const ingredients = [
 
 // ----------------------------------------------- Rest Pattern & Parameters -------------------------------------------------------------------
 
+/*
+
 // 1.)  Destructuring
 
 //SPREAD, because on right side of equal sign =
@@ -211,3 +213,18 @@ add(5, 3, 7, 2);
 console.log(...x);
 
 restaurant.orderPizza("Cheese", "Salami", "ham", "pepperoni");
+
+*/
+
+// ---------------------------------------------------Short Circuiting (&& and ||) ---------------------------------------------------------------------
+
+console.log(3 || "Jean");
+console.log("" || "Jean");
+console.log(true || 0); //"it will short-circuit with "true" which is the value to be print and the rest will be ignored (meaning 0 will be ignored)
+console.log(undefined || null); //No shortpcircuit but it will print "null" as it is the last value
+console.log(null || undefined); //No short-circuit but it will print "undefined" as it is the last value
+
+console.log("-------AND----------");
+
+console.log(0 && true); //will print "true" and there will be no short-circuit
+console.log("jean" && true && "nub" && false && ""); //Here, the code will short-circuit at "False" and the rest of the code will be ignored
