@@ -26,6 +26,11 @@ const restaurant = {
     console.log(`Here is your delicious pasta with ${ing1}, ${ing2}, ${ing3}`);
   },
 
+  orderPizza: function (mainIngredient, ...otherIngredients) {
+    console.log(mainIngredient);
+    console.log(otherIngredients);
+  },
+
   openingHours: {
     thu: {
       open: 12,
@@ -166,6 +171,8 @@ const ingredients = [
 
 // ----------------------------------------------- Rest Pattern & Parameters -------------------------------------------------------------------
 
+// 1.)  Destructuring
+
 //SPREAD, because on right side of equal sign =
 const arr = [1, 2, ...[3, 4]];
 
@@ -184,3 +191,23 @@ console.log(pizza, risotto, otherFood);
 const { sat, ...weekDays } = restaurant.openingHours;
 
 console.log(weekDays);
+
+// 2.) Functions
+
+const add = function (...numbers) {
+  let sum = 0;
+  for (let i = 0; i < numbers.length; i++) {
+    sum += numbers[i];
+  }
+  console.log(sum);
+};
+
+const x = [2, 5, 7];
+add(...x);
+
+add(2, 3);
+add(5, 3, 7, 2);
+
+console.log(...x);
+
+restaurant.orderPizza("Cheese", "Salami", "ham", "pepperoni");
