@@ -228,3 +228,14 @@ console.log("-------AND----------");
 
 console.log(0 && true); //will print "true" and there will be no short-circuit
 console.log("jean" && true && "nub" && false && ""); //Here, the code will short-circuit at "False" and the rest of the code will be ignored
+
+// ------------------------------------------------------- The Nullish Coalescing Operator(??) -----------------------------------------------------------
+
+("------------------Nullish Coalescing Operator(??) ------------------------------------");
+
+restaurant.numGuests = 0;
+const guests = restaurant.numGuests || 10;
+console.log(guests); //this will print 10 because 0 is a falsy value
+
+const guestCorrect = restaurant.numGuests ?? 10;
+console.log(guestCorrect); //this will print 0 because Nullish only considers "null" & "undefined" as falsy values
