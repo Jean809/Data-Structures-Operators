@@ -231,7 +231,9 @@ console.log("jean" && true && "nub" && false && ""); //Here, the code will short
 
 // ------------------------------------------------------- The Nullish Coalescing Operator(??) -----------------------------------------------------------
 
-("------------------Nullish Coalescing Operator(??) ------------------------------------");
+console.log(
+  "------------------Nullish Coalescing Operator(??) ------------------------------------"
+);
 
 restaurant.numGuests = 0;
 const guests = restaurant.numGuests || 10;
