@@ -56,11 +56,15 @@ restaurant.orderDelivery({
 
 //How to destructure an object?
 
+/*
+
 const { name, openingHours, categories } = restaurant;
 
 console.log(name, openingHours, categories);
 
 //mutating variables in objects?
+
+&/
 
 /*
 let a = 213;
@@ -218,6 +222,8 @@ restaurant.orderPizza("Cheese", "Salami", "ham", "pepperoni");
 
 // ---------------------------------------------------Short Circuiting (&& and ||) ---------------------------------------------------------------------
 
+/*
+
 console.log(3 || "Jean");
 console.log("" || "Jean");
 console.log(true || 0); //"it will short-circuit with "true" which is the value to be print and the rest will be ignored (meaning 0 will be ignored)
@@ -241,3 +247,22 @@ console.log(guests); //this will print 10 because 0 is a falsy value
 
 const guestCorrect = restaurant.numGuests ?? 10;
 console.log(guestCorrect); //this will print 0 because Nullish only considers "null" & "undefined" as falsy values
+
+*/
+
+// ---------------------------------------- Looping Arrays ---------------------------------------------------//
+
+const menu = [...restaurant.mainMenu, ...restaurant.starterMenu];
+
+/*
+
+for (const item of menu.entries()) {                          //Old way of doing it
+  console.log(`${item[0] + 1} : ${item[1]}`);
+}
+
+*/
+
+for (const [i, el] of menu.entries()) {
+  //Modern way of doing it with "destructuring"
+  console.log(`${i + 1} : ${el}`);
+}
